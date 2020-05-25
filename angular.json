@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-os-practice"
+    }
+  },
+  "defaultProject": "angular-os-practice",
+  "cli": {
+    "analytics": false
+  }
 }
