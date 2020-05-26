@@ -10,6 +10,8 @@ import {Observable} from "rxjs";
 })
 export class ProductService {
 
+  type: string;
+
   constructor(private http: HttpClient) {}
 
   create(product: Product) {
@@ -45,5 +47,17 @@ export class ProductService {
           date: new Date(product.date)
         }
       }))
+  }
+
+  remove(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.fbDbUrl}/products/${id}.json`);
+  }
+
+  update(product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${environment.fbDbUrl}/products/${product.id}.json`, product);
+  }
+
+  setType(type) {
+    this.type = type;
   }
 }
