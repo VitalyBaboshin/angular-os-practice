@@ -24,7 +24,7 @@ export class AddPageComponent implements OnInit {
       title: new FormControl(null, [Validators.required]),
       photo: new FormControl(null, [Validators.required]),
       info: new FormControl(null, [Validators.required]),
-      price: new FormControl(null, [Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')]),
+      price: new FormControl(null, [Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')])
     })
   }
   submit() {
@@ -46,7 +46,7 @@ export class AddPageComponent implements OnInit {
     this.productService.create(product).subscribe( () => {
       this.form.reset();
       this.submitted = false;
-      this.router.navigate(['/'])
+      this.router.navigate(['/admin','dashboard'])
     });
   }
 
