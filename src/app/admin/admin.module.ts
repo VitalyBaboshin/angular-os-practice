@@ -10,6 +10,8 @@ import { OrdersPageComponent } from './orders-page/orders-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthGuard} from "./shared/services/auth.guard";
 import {QuillModule} from "ngx-quill";
+import {AppModule} from "../app.module";
+import {SearchPipe} from "./shared/search.pipe";
 
 @NgModule({
   declarations: [
@@ -18,27 +20,30 @@ import {QuillModule} from "ngx-quill";
     DashboardPageComponent,
     AddPageComponent,
     OrdersPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    SearchPipe
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    QuillModule.forRoot(),
-    RouterModule.forChild([
-      {
-        path: '', component: AdminLayoutComponent, children: [
-          {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
-          {path: 'login', component: LoginPageComponent},
-          {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
-          {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
-          {path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard]},
-          {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
-        ]
-      }
-    ])
-  ],
-  exports: [RouterModule]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        QuillModule.forRoot(),
+        RouterModule.forChild([
+            {
+                path: '', component: AdminLayoutComponent, children: [
+                    {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
+                    {path: 'login', component: LoginPageComponent},
+                    {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
+                    {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
+                    {path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard]},
+                    {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
+                ]
+            }
+        ])
+    ],
+  exports: [
+    RouterModule
+  ]
 })
 
 export class AdminModule {
