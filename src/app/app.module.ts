@@ -18,21 +18,21 @@ const INTERCEPTOR_PROVIDER: Provider = {
   useClass: AuthInterceptor
 }
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainLayoutComponent,
-    MainPageComponent,
-    ProductPageComponent,
-    CartPageComponent,
-    ProductComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    QuillModule.forRoot()
-  ],
-  providers: [INTERCEPTOR_PROVIDER],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MainLayoutComponent,
+        MainPageComponent,
+        ProductPageComponent,
+        CartPageComponent,
+        ProductComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        QuillModule.forRoot()
+    ],
+    providers: [INTERCEPTOR_PROVIDER],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
