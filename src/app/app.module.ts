@@ -11,6 +11,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import {QuillModule} from "ngx-quill";
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import { ProductComponent } from './shared/components/product/product.component';
+import { SortingPipe } from './shared/sorting.pipe';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -24,7 +25,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         MainPageComponent,
         ProductPageComponent,
         CartPageComponent,
-        ProductComponent
+        ProductComponent,
+        SortingPipe
     ],
     imports: [
         BrowserModule,
