@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class ProductService {
 
-  type: string;
+  type = 'All';
 
   constructor(private http: HttpClient) {}
 
