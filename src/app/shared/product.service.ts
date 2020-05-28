@@ -11,6 +11,7 @@ import {Observable} from "rxjs";
 export class ProductService {
 
   type = 'All';
+  cartProducts: Product[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -59,5 +60,9 @@ export class ProductService {
 
   setType(type) {
     this.type = type;
+  }
+
+  addProduct(product: Product) {
+    this.cartProducts.push(product)
   }
 }
