@@ -22,3 +22,14 @@ export interface Product {
 export interface FbCreateResponse {
   name: string
 }
+
+export interface Order {
+  id?: string,
+  name: string,
+  phone: string,
+  address: string,
+  payment: string,
+  orders: Product[],
+  price: number,
+  date: Date
+}
