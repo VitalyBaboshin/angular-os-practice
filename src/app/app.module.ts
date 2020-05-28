@@ -12,6 +12,9 @@ import {QuillModule} from "ngx-quill";
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import { ProductComponent } from './shared/components/product/product.component';
 import { SortingPipe } from './shared/sorting.pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -32,7 +35,10 @@ const INTERCEPTOR_PROVIDER: Provider = {
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        QuillModule.forRoot()
+        FormsModule,
+        ReactiveFormsModule,
+        QuillModule.forRoot(),
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [INTERCEPTOR_PROVIDER],
     bootstrap: [AppComponent]
