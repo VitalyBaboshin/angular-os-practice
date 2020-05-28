@@ -21,7 +21,6 @@ export class MainLayoutComponent implements OnInit {
   setType(type: string) {
     this.type = type;
     if (this.type !== 'Cart') {
-      console.log(type);
       this.router.navigate([''], {
         queryParams: {
           type: this.type
