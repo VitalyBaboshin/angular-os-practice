@@ -1,20 +1,20 @@
 <nav class="navbar bg-dark">
   <h2>Online Shop</h2>
   <ul>
-    <li routerLinkActive="active">
+    <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
       <a (click)="setType('All')">All</a>
     </li>
-    <li routerLinkActive="active">
+    <li routerLink="" routerLinkActive="active" [queryParams]="{type: 'Phone'}">
       <a (click)="setType('Phone')">Phone</a>
     </li>
-    <li routerLinkActive="active">
+    <li routerLink="" routerLinkActive="active" [queryParams]="{type: 'Tablet'}">
       <a (click)="setType('Tablet')">Tablet</a>
     </li>
-    <li routerLinkActive="active">
-      <a (click)="setType('Laptop')">Laptop</a>
+    <li routerLink="" routerLinkActive="active" [queryParams]="{type: 'Laptop'}">
+      <a (click)="setType('Laptop')" >Laptop</a>
     </li>
     <li routerLinkActive="active">
-      <a (click)="setType('Cart')" [routerLink]="['cart']">Cart</a>
+      <a (click)="setType('Cart')" [routerLink]="['/cart']">Cart</a>
     </li>
 
   </ul>
