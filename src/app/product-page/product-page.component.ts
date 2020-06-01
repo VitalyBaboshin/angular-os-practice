@@ -11,15 +11,16 @@ import {Product} from "../shared/interfaces";
 })
 export class ProductPageComponent implements OnInit {
 
-  product$
+  product$;
   constructor(
     private productService: ProductService,
     private router: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.product$ = this.router.params
       .pipe(switchMap( (params: Params) => {
+        console.log(params);
         return this.productService.getById(params['id'])
       }))
   }
