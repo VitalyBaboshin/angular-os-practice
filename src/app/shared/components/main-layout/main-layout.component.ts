@@ -9,7 +9,7 @@ import {ProductService} from "../../product.service";
 })
 export class MainLayoutComponent implements OnInit {
 
-  type = 'Phone';
+  type = 'All';
   constructor(
     private router: Router,
     private productService: ProductService
@@ -21,7 +21,7 @@ export class MainLayoutComponent implements OnInit {
   setType(type: string) {
     this.type = type;
     if (this.type !== 'Cart') {
-      this.router.navigate([''], {
+      this.router.navigate(['/'], {
         queryParams: {
           type: this.type
         }
